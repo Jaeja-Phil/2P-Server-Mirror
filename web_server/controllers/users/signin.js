@@ -9,6 +9,7 @@ module.exports = {
 				userId: req.body.userId,
 				password: req.body.password,
 				socialId: req.body.socialId,
+				nickname: req.body.nickname
 			};
 
 			let data = await models.signin.post(params);

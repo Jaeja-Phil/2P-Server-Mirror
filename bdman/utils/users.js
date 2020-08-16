@@ -1,11 +1,12 @@
 const rooms = {};
 
 // Join user to chat
-function userJoin(id, username, room) {
+function userJoin(id, username, room, avatarId) {
   let user = {
     id: id,
     username: username,
     room: room,
+    avatarId: avatarId,
     score: 0
   }
   if(!rooms[room]) rooms[room] = {};
@@ -38,6 +39,10 @@ function getCurrentUser(id){
   return tmp;
 }
 
+function endGame(room){
+  delete rooms[room];
+}
+
 // Get room users
 function getRoomUsers(room) {
   return rooms[room];
@@ -48,4 +53,5 @@ module.exports = {
   userLeave,
   getRoomUsers,
   getCurrentUser,
+  endGame
 };

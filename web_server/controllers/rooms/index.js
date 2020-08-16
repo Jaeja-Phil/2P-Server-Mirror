@@ -49,7 +49,7 @@ module.exports = {
   roomlist: {
     get: function (req, res) {
       try {
-        let gameCode = req.cookies.selectedGame;
+        let gameCode = req.query.gameCode;
         let getRooms;
         let rooms = [];
 
@@ -119,7 +119,7 @@ module.exports = {
         }
       } catch (err) {
         console.log(err);
-        res.status(501).json({ error: JSON.stringify(err) });
+        res.status(200).json({ error: '존재하지 않는 방입니다. 새로고침 버튼을 눌러주세요 :)' });
       }
     },
   },
@@ -160,7 +160,7 @@ module.exports = {
           throw new Error('server Err');
         }
       } catch (err) {
-        console.log(err);
+        console.log(err, 'leaveroom error !@#!@#!@#');
         res.status(501).json({ error: JSON.stringify(err) });
       }
     },

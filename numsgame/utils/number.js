@@ -45,10 +45,21 @@ function endGame(room){
   delete log[room];
 }
 
+function isGame(room){
+  // console.log(log[room]);
+  return Boolean(log[room]);
+}
+
+function getlog(room){
+  return log[room];
+}
+
 module.exports = {
   randomNum,
   getResult,
   gameStart,
   makelog,
   endGame,
+  isGame,
+  getlog
 }

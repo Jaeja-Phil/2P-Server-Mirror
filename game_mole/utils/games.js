@@ -3,11 +3,12 @@
 const games = [];
 
 // Join game
-function gameJoin(nickname, gameRoomId, socketId) {
+function gameJoin(nickname, gameRoomId, socketId, avatarId) {
   let game = {
     gameRoomId,
     usernames: [],
     socketId: [],
+    avatarId: {},
     currentMole: 0,
     score: {},
   };
@@ -15,6 +16,7 @@ function gameJoin(nickname, gameRoomId, socketId) {
     game.usernames.push(nickname);
     game.score[nickname] = 0;
     game.socketId.push(socketId);
+    game.avatarId[nickname] = avatarId;
     games.push(game);
     return [game, false];
   } else {
@@ -24,6 +26,7 @@ function gameJoin(nickname, gameRoomId, socketId) {
     games.find((gameRoomId) => gameRoomId).usernames.push(nickname);
     games.find((gameRoomId) => gameRoomId).score[nickname] = 0;
     games.find((gameRoomId) => gameRoomId).socketId.push(socketId);
+    games.find((gameRoomId) => gameRoomId).avatarId[nickname] = avatarId;
     return [games.find((gameRoomId) => gameRoomId), false];
   }
 }
