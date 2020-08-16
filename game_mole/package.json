@@ -1,0 +1,35 @@
+{
+  "name": "game_mole",
+  "version": "1.0.0",
+  "description": "A server for a moregame",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "2p4p",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "node-fetch": "^2.6.0",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

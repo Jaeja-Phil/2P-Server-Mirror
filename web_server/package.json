@@ -1,0 +1,50 @@
+{
+  "name": "2p-server",
+  "version": "1.0.0",
+  "description": "A server for 2p client",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanderer-s/2P-server.git"
+  },
+  "keywords": [
+    "2p"
+  ],
+  "author": "wanderer-s",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanderer-s/2P-server/issues"
+  },
+  "homepage": "https://github.com/wanderer-s/2P-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}
